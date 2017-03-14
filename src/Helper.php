@@ -198,19 +198,19 @@ class Helper
 	{
 		$sIp = '';
 
-	    if ( self::isExistString( $_SERVER['HTTP_X_REAL_IP'] ) ) 
+	    if ( isset( $_SERVER['HTTP_X_REAL_IP'] ) && self::isExistString( $_SERVER['HTTP_X_REAL_IP'] ) ) 
 	    {
 	        $sIp = $_SERVER['HTTP_X_REAL_IP'];
 	    } 
-	    elseif ( self::isExistString( $_SERVER['REMOTE_ADDR'] ) ) 
+	    elseif ( isset( $_SERVER['REMOTE_ADDR'] ) && self::isExistString( $_SERVER['REMOTE_ADDR'] ) ) 
 	    {
 	        $sIp = $_SERVER['REMOTE_ADDR'];
 	    } 
-	    elseif ( self::isExistString( $_SERVER['HTTP_CLIENT_IP'] ) ) 
+	    elseif ( isset( $_SERVER['HTTP_CLIENT_IP'] ) && self::isExistString( $_SERVER['HTTP_CLIENT_IP'] ) ) 
 	    {
 	        $sIp = $_SERVER['HTTP_CLIENT_IP'];
 	    } 
-	    elseif ( self::isExistString( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) 
+	    elseif ( isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) && self::isExistString( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) 
 	    {
 	        $sIp = $_SERVER['HTTP_X_FORWARDED_FOR'];
 	    } 
