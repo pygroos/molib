@@ -91,7 +91,7 @@ class Request
 		{
 			return self::ERROR_PARAMETER;
 		}
-		if ( ! Lib::isExistString( $arrRequest['url'] ) )
+		if ( ! Helper::isExistString( $arrRequest['url'] ) )
 		{
 			return self::ERROR_PARAMETER;
 		}
