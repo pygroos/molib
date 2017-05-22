@@ -218,5 +218,37 @@ class Helper
 	    return $sIp;
 	}
 
+	//  
+    //	Determine if a given string starts with a given substring
+    // 
+    static function startsWith($haystack, $needles)
+    {
+    	$bRet = false;
+
+        foreach ((array) $needles as $needle) 
+        {
+            if ($needle != '' && mb_strpos($haystack, $needle) === 0) {
+                $bRet = true;
+            }
+        }
+
+        return $bRet;
+    }
 	
+    //   
+    //	Determine if a given string ends with a given substring.
+    //  
+    static function endsWith($haystack, $needles)
+    {
+    	$bRet = false;
+
+        foreach ((array) $needles as $needle) {
+            if ((string) $needle === mb_substr($haystack, -mb_strlen($needle), NULL, 'UTF-8')) {
+                $bRet = true;
+            }
+        }
+
+        return $bRet;
+    }
+
 }
