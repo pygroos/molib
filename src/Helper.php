@@ -89,6 +89,35 @@ class Helper
 		return $bRet;
 	}
 
+	static function verifyIdCard( $sCardNumber )
+	{
+		$bRet = false;
+
+		if (! is_numeric($sCardNumber) || strlen($sCardNumber) != 18)
+		{
+			return false;
+		}
+
+		$arrWeighted = array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
+		$arrVerifyNum = array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
+		$arrIdCard = str_split($sCardNumber, 17);
+
+		$nCheckSum = 0;
+		for ($i = 0; $nLength = strlen($arrIdCard[0]), $i < $nLength;  $i++)
+		{
+			$nCheckSum += substr($arrIdCard[0], $i, 1) * $arrWeighted[$i];
+		}
+
+		$nMod = $nCheckSum % 11;
+		if ($arrVerifyNum[$nMod] == $arrIdCard[1])
+		{
+			$bRet = true;
+		}
+
+		return $bRet;
+	}
+
+
 
 
 	//////////////////////////////////////////////////////////////////////
@@ -221,7 +250,7 @@ class Helper
 	//  
     //	Determine if a given string starts with a given substring
     // 
-    static function startsWith($haystack, $needles)
+    static function startsWith( $haystack, $needles )
     {
     	$bRet = false;
 
@@ -238,7 +267,7 @@ class Helper
     //   
     //	Determine if a given string ends with a given substring.
     //  
-    static function endsWith($haystack, $needles)
+    static function endsWith( $haystack, $needles )
     {
     	$bRet = false;
 
