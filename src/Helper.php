@@ -89,27 +89,30 @@ class Helper
 		return $bRet;
 	}
 
-	static function verifyIdCard( $sCardNumber )
+	static function verifyIdCard( $sIdCard )
 	{
 		$bRet = false;
 
-		if (! is_numeric($sCardNumber) || strlen($sCardNumber) != 18)
+		$nCheckSum = 0;
+		$verIdCard = substr( $sIdCard, 0, 17 );
+		$verIdCardNum = strtolower( substr( $sIdCard, 17, 1 ) );
+
+		if ( !is_numeric($verIdCard) || strlen($sIdCard) != 18 )
 		{
 			return false;
 		}
 
-		$arrWeighted = array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
-		$arrVerifyNum = array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
-		$arrIdCard = str_split($sCardNumber, 17);
+		$arrWeighted = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+		$arrVerifyNum = ['1', '0', 'x', '9', '8', '7', '6', '5', '4', '3', '2'];
 
-		$nCheckSum = 0;
-		for ($i = 0; $nLength = strlen($arrIdCard[0]), $i < $nLength;  $i++)
+		for ($i = 0; $nLength = strlen($verIdCard), $i < $nLength;  $i++)
 		{
-			$nCheckSum += substr($arrIdCard[0], $i, 1) * $arrWeighted[$i];
+			$nCheckSum += $verIdCard[$i] * $arrWeighted[$i];
 		}
 
 		$nMod = $nCheckSum % 11;
-		if ($arrVerifyNum[$nMod] == $arrIdCard[1])
+
+		if ( $arrVerifyNum[$nMod] == $verIdCardNum )
 		{
 			$bRet = true;
 		}
