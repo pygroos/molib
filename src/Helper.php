@@ -189,6 +189,21 @@ class Helper
 	///		Calculate
 	///
 	//////////////////////////////////////////////////////////////////////
+
+	static function fetchRepeatMemberInArray( $array )
+	{
+		$arrRepeat = [];
+		$length = count( $array );
+		for ( $i = 0; $i < $length; $i++ ) { 
+			for ( $j = $i + 1; $j < $length; $j++ ) { 
+				if ( $array[$i] == $array[$j] ) {
+					$arrRepeat[] = $array[$i];
+				}
+			}
+		}
+
+		return $arrRepeat;
+	}
 	
 	static function arrDepth( $array )
 	{
