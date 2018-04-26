@@ -2,7 +2,7 @@
 /**
  * 	This file is part of the moext/molib package.
  *
- *	(c)	Moext <dev@moext.org>
+ *	(c)	Niu Cun hui <niucunhui@gmail.com>
  * 
  *	For the full copyright and license information, please view the LICENSE
  * 	file that was distributed with this source code. 

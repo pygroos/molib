@@ -2,7 +2,7 @@
 /**
  * 	This file is part of the moext/molib package.
  *
- *	(c)	Moext <dev@moext.org>
+ *	(c)	Niu Cun hui <niucunhui@gmail.com>
  * 
  *	For the full copyright and license information, please view the LICENSE
  * 	file that was distributed with this source code. 
@@ -205,6 +205,14 @@ class Helper
 		return $arrRepeat;
 	}
 	
+    //
+    //  Calculate the remaining seconds before the current time tomorrow morning
+    //
+    static function lastTomorrow()
+    {
+        return strtotime(date('Y-m-d',strtotime('+1 day'))) - time();
+    }
+
 	static function arrDepth( $array )
 	{
 		if ( ! is_array( $array ) )
