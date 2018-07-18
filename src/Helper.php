@@ -208,7 +208,7 @@ class Helper
     //
     //  Calculate the remaining seconds before the current time tomorrow morning
     //
-    static function lastTomorrow()
+    static function timeLeftTomorrow()
     {
         return strtotime(date('Y-m-d',strtotime('+1 day'))) - time();
     }
