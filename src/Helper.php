@@ -120,10 +120,34 @@ class Helper
 		return $bRet;
 	}
 
+    static function isDateCross( $startDateA = '', $endDateA = '', $startDateB = '', $endDateB = '' )
+    {
+        $bRet = false;
+
+        $status = strtotime( $startDateB ) - strtotime( $startDateA );
+        if ( $status > 0 )
+        {
+            $status2 = strtotime( $startDateB ) - strtotime( $endDateA );
+            if ( $status2 < 0 )
+            {
+                $bRet = true;
+            }
+        }
+        else
+        {
+            $status2 = strtotime( $endDateB ) - strtotime( $startDateA );
+            if ( $status2 > 0 )
+            {
+                $bRet = true;
+            }
+        }
+
+        return $bRet;
+    }
 
 
 
-	//////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 	///
 	///		Builder
 	///
