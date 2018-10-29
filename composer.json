@@ -4,11 +4,11 @@
     "keywords": ["library", "moext"],
     "license": "MIT",
     "type": "library",
-    "homepage": "http://moext.org",
+    "homepage": "https://moaik.github.io",
     "authors": [
         {
-            "name": "moext",
-            "email": "dev@moext.org"
+            "name": "niucunhui",
+            "email": "niucunhui@gmail.com"
         }
     ],
     "require": {

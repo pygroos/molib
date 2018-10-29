@@ -1,6 +1,6 @@
 <?php
 /**
- * 	This file is part of the moext/molib package.
+ * 	This file is part of the moaik/molib package.
  *
  *	(c)	Niu Cun hui <niucunhui@gmail.com>
  * 
@@ -8,7 +8,7 @@
  * 	file that was distributed with this source code. 
  */
 
-namespace Moext\Molib;
+namespace Moaik\Molib;
 
 class Request
 {
