@@ -1,14 +1,14 @@
 {
     "name": "moaik/molib",
     "description": "PHP Library",
-    "keywords": ["library", "moext"],
+    "keywords": ["library", "moaik"],
     "license": "MIT",
     "type": "library",
     "homepage": "https://moaik.github.io",
     "authors": [
         {
-            "name": "niucunhui",
-            "email": "niucunhui@gmail.com"
+            "name": "moaik",
+            "email": "dev@moaik.com"
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
     },
      "autoload" : {
         "psr-4" : { 
-            "Moext\\" : "src" 
+            "Moaik\\" : "src"
         }
     },
      "repositories": {
