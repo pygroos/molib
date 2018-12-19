@@ -1,13 +1,13 @@
 <?php
 /**
- * 	This file is part of the moaik/molib package.
+ * 	This file is part of the pygroos/molib package.
  *
- *	(c)	Niu Cun hui <niucunhui@gmail.com>
+ *	(c)	pygroos <pygroos@gmail.com>
  * 
  *	For the full copyright and license information, please view the LICENSE
  * 	file that was distributed with this source code. 
  */
-namespace Moaik\Molib;
+namespace Pygroos\Molib;
 
 class Helper
 {
