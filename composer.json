@@ -1,14 +1,14 @@
 {
-    "name": "moaik/molib",
+    "name": "pygroos/molib",
     "description": "PHP Library",
-    "keywords": ["library", "moaik"],
+    "keywords": ["library", "pygroos"],
     "license": "MIT",
     "type": "library",
-    "homepage": "https://moaik.github.io",
+    "homepage": "https://pygroos.github.io",
     "authors": [
         {
-            "name": "moaik",
-            "email": "dev@moaik.com"
+            "name": "pygroos",
+            "email": "pygroos@gmail.com"
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
     },
      "autoload" : {
         "psr-4" : { 
-            "Moaik\\" : "src"
+            "Pygroos\\" : "src"
         }
     },
      "repositories": {
